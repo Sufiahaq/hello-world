@@ -45,10 +45,10 @@ pipeline{
             steps{
                 rtServer (
     id: 'Artifactory-1',
-    url: 'http://172.31.12.88:8082',
+    url: 'http://13.239.34.239:8082',
         // If you're using username and password:
-    username: 'jenkins',
-    password: 'Jenkins@123',
+    username: 'admin',
+    password: 'Telus@123',
         // If you're using Credentials ID:
     //    credentialsId: 'jfrog-token',
         // If Jenkins is configured to use an http proxy, you can bypass the proxy when using this Artifactory server:
