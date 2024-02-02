@@ -1,9 +1,7 @@
 pipeline{
     agent any
-    tools{
-        jdk 'jdk11'
-        maven 'maven'
-    } 
+   
+    
      
      environment {
         SCANNER_HOME=tool 'sonar-scanner'
@@ -41,7 +39,7 @@ pipeline{
                 }
             }
         }
-        stage("jfrog") {
+        /*stage("jfrog") {
             steps{
                 rtServer (
     id: 'Artifactory-1',
@@ -70,7 +68,16 @@ rtUpload (
 
 )
             }
+        } */
+        stage("docker image") {
+            steps {
+                script {
+                    sh "docker build -t sufiahaq/test:${BUILD_ID}"
+                }
+            }
         }
+
+ 
         
         
     }
