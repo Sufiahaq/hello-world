@@ -79,6 +79,11 @@ rtUpload (
                 }
             }
         }
+        stage("push image to dockerhub") {
+        steps {
+            sh "docker push sufiahaq/test:${BUILD_ID}"
+        }
+        }
 
  
         
