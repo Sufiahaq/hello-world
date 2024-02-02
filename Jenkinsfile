@@ -42,7 +42,7 @@ pipeline{
                 }
             }
         }
-        /*stage("jfrog") {
+        stage("jfrog") {
             steps{
                 rtServer (
     id: 'Artifactory-1',
@@ -71,7 +71,7 @@ rtUpload (
 
 )
             }
-        } */
+        } 
         stage("docker image") {
             steps {
                 script {
