@@ -64,7 +64,7 @@ rtUpload (
           "files": [
             {
               "pattern": "webapp/target/**.war",
-              "target": "ui/native/myartifact/com/example/maven-project/webapp"
+              "target": "myartifact/com/example/maven-project/webapp"
             }
          ]
     }''',
