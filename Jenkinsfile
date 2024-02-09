@@ -76,7 +76,7 @@ rtUpload (
             steps {
                 script {
                     sh "docker build -t sufiahaq/test:${BUILD_ID} ./"
-                    sh "docker tag sufiahaq/test:${BUILD_ID} sufiahaq/test:latest
+                    sh "docker tag sufiahaq/test:${BUILD_ID} sufiahaq/test:latest"
                 }
             }
         }
