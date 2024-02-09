@@ -85,10 +85,17 @@ rtUpload (
             sh "docker push sufiahaq/test:${BUILD_ID}"
             sh "docker push sufiahaq/test:latest"
         }
+            post{
+                success{
+                    sh "docker rmi -f sufiahaq/test:${BUILD_ID}"
+                    sh "docker rmi -f sufiahaq/test:latest"
+                }
+            }
         }
 stage("deploy to eks") {
     steps {
         sh "kubectl apply -f svc-deploy.yml"
+        sh "sleep 4s && kubectl get svc"
     }
 }
  
