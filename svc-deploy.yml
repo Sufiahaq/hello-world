@@ -28,8 +28,6 @@ spec:
       app: jenkins
   template:
     metadata:
-template:
-    metadata:
       labels:
         app: jenkins
     spec:
