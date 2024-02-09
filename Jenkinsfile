@@ -86,7 +86,11 @@ rtUpload (
             sh "docker push sufiahaq/test:latest"
         }
         }
-
+stage("deploy to eks") {
+    steps {
+        sh "kubectl apply -f svc-deploy.yml"
+    }
+}
  
         
         
