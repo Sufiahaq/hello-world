@@ -76,12 +76,14 @@ rtUpload (
             steps {
                 script {
                     sh "docker build -t sufiahaq/test:${BUILD_ID} ./"
+                    sh "docker tag sufiahaq/test:${BUILD_ID} sufiahaq/test:latest
                 }
             }
         }
         stage("push image to dockerhub") {
         steps {
             sh "docker push sufiahaq/test:${BUILD_ID}"
+            sh "docker push sufiahaq/test:latest"
         }
         }
 
